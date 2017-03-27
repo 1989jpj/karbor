@@ -84,6 +84,13 @@ function configure_karbor_api {
     fi
 }
 
+function configure_swift_provider {
+    if is_service_enabled swift; then
+        echo "Configuring Swift Provider"
+        isiset $KARBOR_PROVIDER_SWIFT_CONF swift_client swift_key $SERVICE_PASSWORD
+    fi
+}
+
 function create_karbor_cache_dir {
 
     # Delete existing dir
@@ -108,6 +115,7 @@ if [[ "$Q_ENABLE_KARBOR" == "True" ]]; then
         echo_summary "Configuring Karbor"
 
         configure_karbor_api
+        configure_swift_provider
 
         echo export PYTHONPATH=\$PYTHONPATH:$KARBOR_DIR >> $RC_DIR/.localrc.auto
 
