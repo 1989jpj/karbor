@@ -22,4 +22,4 @@ export PYTHONPATH=$PYTHONPATH:$KARBOR_DIR
 KARBOR_SERVICE_NAME=karbor
 KARBOR_SERVICE_TYPE=data-protect
 
-KARBOR_PROVIDER_SWIFT_CONF=$KARBOR_DIR/providers.d/openstack-infra.conf
+KARBOR_PROVIDER_SWIFT_CONF=$KARBOR_CONF_DIR/providers.d/openstack-infra.conf
