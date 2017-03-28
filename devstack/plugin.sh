@@ -86,7 +86,7 @@ function configure_karbor_api {
 
 function configure_swift_provider {
     echo "Configuring Swift Provider"
-    isiset $KARBOR_PROVIDER_SWIFT_CONF swift_client swift_key $SERVICE_PASSWORD
+    iniset $KARBOR_PROVIDER_SWIFT_CONF swift_client swift_key $SERVICE_PASSWORD
 }
 
 function create_karbor_cache_dir {
